@@ -11,8 +11,10 @@ Required libraries: discord, discord_hooks (included in repo)
 ``` 
 pip3 install discord 
 ```
+
+## Commands
 ### For hosts:
-While hosting:
+#### While hosting:
 
 !startgame - Initiate the interactive process of starting a game
 
@@ -32,7 +34,7 @@ While hosting:
 
 Various sound commands are also included: s!wait1, s!wait2, s!win, s!sav, s!gt, s!t, s!q12, s!info
 
-Administrative:
+#### Administrative:
 
 !updatelb - Initiate the interactive process of updating leaderboard (info is saved to leaderboard.csv)
 
