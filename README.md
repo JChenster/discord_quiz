@@ -4,7 +4,7 @@
 A bot written in Python that allows a person to locally host an interactive multi-player timed multiple choice trivia quiz game with custom questions in their Discord server. Each game will be composed of x trivia questions with 3 multiple choice options where players have x seconds to answer by typing 1, 2, or 3 in the channel where the game is being hosted. Players that answer incorrectly without an extra life are eliminated. If they have an extra life, they essentially have another try.
 
 ## Background
-I wrote this discord bot back in Summer of 2018. I have decided to recently upload the code. The specific usernames and webhooks necessary to run this bot have been removed and replaced with strings indicating the necessity for replacement. The specific version of 
+I wrote this discord bot back in Summer of 2018. I have decided to recently upload the code. The specific usernames and webhooks necessary to run this bot have been removed and replaced with strings indicating the necessity for replacement.
 
 ## Usage
 Required modules: discord
