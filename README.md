@@ -11,7 +11,7 @@ Required libraries: discord, discord_hooks (included in repo)
 ``` 
 pip3 install discord 
 ```
-###For hosts:
+### For hosts:
 While hosting:
 !startgame - Initiate the interactive process of starting a game
 !pot - Set prize pool
@@ -29,8 +29,7 @@ Administrative:
 .ticktock - See what game is currently happening (if any)
 .lb - Display leaderboard
 
-
-###For players:
+### For players:
 !help - Provides some basic info and a list of helpful commands
 !join - Join the game (only works when registration is open)
 !myscore - Check how many questions you answered correctly (only works after the game)
