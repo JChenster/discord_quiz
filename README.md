@@ -8,5 +8,7 @@ I wrote this discord bot back in Summer of 2018. I have decided to recently uplo
 
 ## Usage
 Required libraries: discord, discord_hooks (included in repo)
-``` pip3 install discord ```
+``` 
+pip3 install discord 
+```
 
