@@ -7,7 +7,7 @@ A bot written in Python that allows a person to locally host an interactive mult
 I wrote this discord bot back in Summer of 2018. I have decided to recently upload the code. The specific usernames and webhooks necessary to run this bot have been removed and replaced with strings indicating the necessity for replacement. The specific version of 
 
 ## Usage
-Required libraries: discord, discord_hooks (included in repo)
+Required modules: discord
 ``` 
 pip3 install discord 
 ```
