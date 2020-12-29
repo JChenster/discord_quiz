@@ -13,24 +13,41 @@ pip3 install discord
 ```
 ### For hosts:
 While hosting:
+
 !startgame - Initiate the interactive process of starting a game
+
 !pot - Set prize pool
+
 !settimer - Set time allowed per question
+
 !startreg - Start registration for current game
+
 !q - Display next question
+
 !res - Shows results of most recent question
+
 !endgame - End current game and display winners
+
 !lb - Show leaderboard for current game
+
 Various sound commands are also included: s!wait1, s!wait2, s!win, s!sav, s!gt, s!t, s!q12, s!info
 
 Administrative:
+
 !updatelb - Initiate the interactive process of updating leaderboard (info is saved to leaderboard.csv)
+
 !payout - Report the payout for a game in a channel (if money is being offered as a prize and split across winners)
+
 .ticktock - See what game is currently happening (if any)
+
 .lb - Display leaderboard
 
 ### For players:
 !help - Provides some basic info and a list of helpful commands
+
 !join - Join the game (only works when registration is open)
+
 !myscore - Check how many questions you answered correctly (only works after the game)
+
 !t - Displays how much time is left to answer the question
+
