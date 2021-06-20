@@ -5,7 +5,7 @@ class QuizGame:
     # Attributes
 
     # Game-wide
-    # players: dict
+    # players: dict{str: int}
     # active_game: bool
     # active_registration: bool
     # questions: List[Question]
@@ -13,13 +13,13 @@ class QuizGame:
     # Set by user
     # num_questions: int
     # num_options: int
-    # prize: float
     # question_timer: float
 
     # Question-specific
     # question_start: time
     # cur_question_num: int
     # cur_result_num: int
+    # answer_log: dict{str: str}
 
     def __init__(self):
         self.resetQuizGame()
@@ -29,10 +29,11 @@ class QuizGame:
         self.active_game = self.active_registration = False
         self.questions = []
 
-        self.num_questions = self.num_options = self.prize = self.question_timer = -1
+        self.num_questions = self.num_options = self.question_timer = -1
 
         self.question_start = 0
         self.cur_question_num = self.cur_result_num = -1
+        self.answer_log = dict()
 
     # players
     def getPlayers(self) -> dict:
@@ -43,6 +44,9 @@ class QuizGame:
             return False
         self.players[user] = 0
         return True
+
+    def checkPlayer(self, user: str) -> bool:
+        return self.players.get(user) is not None
 
     # active_game
     def isActiveGame(self) -> bool:
@@ -85,13 +89,6 @@ class QuizGame:
     def getNumOptions(self) -> int:
         return self.num_options
     
-    # prize
-    def setPrize(self, prize: float) -> None:
-        self.prize = prize
-    
-    def getPrize(self) -> float:
-        return self.prize
-
     # question_timer
     def setQuestionTimer(self, question_timer: float) -> None:
         self.question_timer = question_timer
@@ -106,9 +103,38 @@ class QuizGame:
     def getQuestionStart(self):
         return self.question_start
 
-    # question_num
+    # cur_question_num
     def getCurQuestionNum(self):
         return self.cur_question_num
 
+    def getCurQuestion(self):
+        return self.questions[self.cur_question_num]
+
+    # cur_result_num
     def getCurResultNum(self):
         return self.cur_result_num
+        
+    # answer_log
+    def resetAnswerLog(self):
+        self.answer_log = dict()
+    
+    def updateAnswerLog(self, player: str, answer: str):
+        self.answer_log[player] = answer
+
+    # We return a dictionary with keys answers choices and values how many people picked it
+    def processResults(self) -> dict:
+        if self.cur_result_num == self.num_questions - 1:
+            return None
+        self.cur_result_num += 1
+        results = dict()
+        # Add 1 point to all of the players that got this question correct
+        answer = self.getCurQuestion().getAnswer().lower()
+        for player, player_ans in self.answer_log.items():
+            if results.get(player_ans):
+                results[player_ans] += 1
+            else:
+                results[player_ans] = 1
+            if player_ans == answer:
+                self.players[player] += 1
+        self.resetAnswerLog()
+        return results

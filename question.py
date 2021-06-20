@@ -18,6 +18,6 @@ class Question:
     def getOptions(self):
         return self.options
     
+    # Returns answer (uppercase letter)
     def getAnswer(self) -> int:
         return self.answer
-
