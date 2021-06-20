@@ -8,7 +8,8 @@ from question import Question
 from visuals import optionsVisual, resultsVisual
 # This is where the constants for my private instance of running this bot in my server are stored
 # To run your own version, use your own constants file as modelled by template
-import privateconstants as constants
+# import privateconstants as constants
+import constants
 
 bot = commands.Bot(command_prefix='!')
 # Global variable representing the quiz game currently occuring
